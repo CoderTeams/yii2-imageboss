@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /**
  * This is just an example.
  */
-class ResponsiveImage extends \yii\base\Widget
+class Image extends \yii\base\Widget
 {
     public $message;
 

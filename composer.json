@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "coderteams\\ImageBoss\\": ""
+            "coderteams\\imageboss\\": ""
         }
     }
 }
