@@ -5,7 +5,7 @@
  * @author Pablo Nuñez <pablo@coderteams.com>
  * @copyright Copyright &copy; CoderTeams 2018
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 namespace coderteams\imageboss;
@@ -18,9 +18,12 @@ class Image extends \yii\base\Widget
 {
     CONST IMAGEBOSS_URL = "https://img.imageboss.me";
     public $withoutEnlargement = true;
-    public $MaxWidthForMobile = '479';
-    public $MaxWidthForTablet = '767';
-    public $MaxWidthForDesktop = '991';
+    public $MaxWidthForMobile = '640';
+    public $MaxWidthForTablet = '1024';
+    public $MaxWidthForDesktop = '1900';
+
+    public $url;
+    public $options = [];
 
     public static function widget($config = [])
     {
@@ -42,9 +45,11 @@ class Image extends \yii\base\Widget
             Url::to('/', true),
             $url,
         ]);
-        return Html::img($source, [
-            'onerror' => "this.onerror=null;this.src='" . $url . "';"
-        ]);
+        return Html::img($source, 
+		array_merge(
+		['onerror' => "this.onerror=null;this.src='" . $url . "';"],
+		$this->options)
+		);
     }
 
     private function GetSize()
@@ -65,6 +70,7 @@ class Image extends \yii\base\Widget
         $this->MaxWidthForMobile = $config["MaxWidthForMobile "] ?? $this->MaxWidthForMobile;
         $this->MaxWidthForTablet = $config["MaxWidthForTablet "] ?? $this->MaxWidthForTablet;
         $this->MaxWidthForDesktop = $config["MaxWidthForDesktop"] ?? $this->MaxWidthForDesktop;
+        $this->options = $config["options"] ?? $this->options;
     }
 
 }
