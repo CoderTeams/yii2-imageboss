@@ -28,4 +28,4 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \coderteams\imageboss\Image::widget(); ?>```
+<?= \coderteams\imageboss\Image::widget(['url'=>'/myimage.jpg']); ?>```
