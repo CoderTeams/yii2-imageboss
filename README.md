@@ -1,6 +1,6 @@
 Yii2 ImageBoss Responsive Widget
 ================================
-Render img tags with ImageBoss Third-Part service acording to windows size
+Renders IMG tags with the ImageBoss third party service acording to device screen size
 
 Installation
 ------------
@@ -28,4 +28,4 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \coderteams\imageboss\AutoloadExample::widget(); ?>```
+<?= \coderteams\imageboss\Image::widget(); ?>```
