@@ -1,0 +1,21 @@
+{
+    "name": "coderteams/yii2-imageboss",
+    "description": "Render img tags with ImageBoss Third-Part service acording to windows size",
+    "type": "yii2-extension",
+    "keywords": ["yii2","widget"," ImageBoss"," Responsive"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Pablo Nuñez",
+            "email": "pablo@coderteams.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "coderteams\\ImageBoss\\": ""
+        }
+    }
+}
