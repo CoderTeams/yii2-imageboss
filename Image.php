@@ -42,7 +42,6 @@ class Image extends \yii\base\Widget
             self::IMAGEBOSS_URL,
             $size,
             "/withoutEnlargement:" . $this->withoutEnlargement . "/",
-            Url::to('/', true),
             $url,
         ]);
         return Html::img($source, 
