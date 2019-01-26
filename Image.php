@@ -18,9 +18,9 @@ class Image extends \yii\base\Widget
 {
     CONST IMAGEBOSS_URL = "https://img.imageboss.me";
     public $withoutEnlargement = true;
-    public $MaxWidthForMobile = '640';
-    public $MaxWidthForTablet = '1024';
-    public $MaxWidthForDesktop = '1900';
+    public $MaxWidthForMobile = '480';
+    public $MaxWidthForTablet = '920';
+    public $MaxWidthForDesktop = '1920';
 
     public $url;
     public $options = [];
