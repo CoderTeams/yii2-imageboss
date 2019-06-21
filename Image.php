@@ -34,16 +34,7 @@ class Image extends \yii\base\Widget
     public function echo($url, $config = [])
     {
         $this->TrySetProperties($config);
-
-        $size = $this->GetSize();
-
-        $this->withoutEnlargement = $this->withoutEnlargement ? "true" : "false";
-        $source = join([
-            self::IMAGEBOSS_URL,
-            $size,
-            "/withoutEnlargement:" . $this->withoutEnlargement . "/",
-            $url,
-        ]);
+        $source = $this->getUrl($url, $config);
         return Html::img($source, 
 		array_merge(
 		['onerror' => "this.onerror=null;this.src='" . $url . "';"],
@@ -71,5 +62,23 @@ class Image extends \yii\base\Widget
         $this->MaxWidthForDesktop = $config["MaxWidthForDesktop"] ?? $this->MaxWidthForDesktop;
         $this->options = $config["options"] ?? $this->options;
     }
+
+
+    public function getUrl($url, $config = [])
+    {
+        $this->TrySetProperties($config);
+
+        $size = $this->GetSize();
+
+        $this->withoutEnlargement = $this->withoutEnlargement ? "true" : "false";
+        $result = join([
+            self::IMAGEBOSS_URL,
+            $size,
+            "/withoutEnlargement:" . $this->withoutEnlargement . "/",
+            $url,
+        ]);
+        return $result;
+    }
+
 
 }
